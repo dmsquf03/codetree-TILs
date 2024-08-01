@@ -14,8 +14,9 @@ bool InRange(int x, int y, int n){
 
 int main() {
     // 여기에 코드를 작성해주세요.
-    int n, t, r, c, d, dir, nr, nc;
-    int dx[4] = {0, 1, -1, 0}, dy[4] = {1, 0, 0, -1};
+    int n, t, r, c, dir;
+    char d;
+    int dr[4] = {0, 1, -1, 0}, dc[4] = {1, 0, 0, -1};
 
     // 입력
     cin >> n >> t >> r >> c >> d;
@@ -27,22 +28,17 @@ int main() {
     c -= 1;
 
     while(t--){
-        if(!InRange(r + dx[dir], c + dy[dir], n)){
+        if(!InRange(r + dr[dir], c + dc[dir], n)){
             dir = 3 - dir;
-            nr = r;
-            nc = c;
         }
         else{
-            nr = r + dx[dir];
-            nc = c + dy[dir];
-
-            r = nr;
-            c = nc;
+            r += dr[dir];
+            c += dc[dir];
         }
     }
 
     // 출력
-    cout << nr + 1 << " " << nc + 1;
+    cout << r + 1 << " " << c + 1;
 
     return 0;
 }
