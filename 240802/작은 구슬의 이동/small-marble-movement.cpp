@@ -29,6 +29,8 @@ int main() {
     while(t--){
         if(!InRange(r + dx[dir], c + dy[dir], n)){
             dir = 3 - dir;
+            nr = r;
+            nc = c;
         }
         else{
             nr = r + dx[dir];
