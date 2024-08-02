@@ -22,7 +22,7 @@ int main() {
     while(cnt < n * m + 1){
         arr[r][c] = cnt;
         empty[r][c] = 0;
-        if(!InRange(r + dr[dir], c + dc[dir], n, m) || !empty[r + dr[dir]][c + dc[dir]]){// 범위 + 채워진 경우-> 방향 바꿈!!! 이거 수정해야함
+        if(!InRange(r + dr[dir], c + dc[dir], n, m) || !empty[r + dr[dir]][c + dc[dir]]){// 범위 + 채워진 경우-> 방향 바꿈!!!
             dir = (dir + 1) % 4;
         }
         r += dr[dir];
