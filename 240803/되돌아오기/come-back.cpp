@@ -14,7 +14,7 @@ bool IsStart(int x, int y){
 
 int main() {
     // 여기에 코드를 작성해주세요.
-    int n, x = 0, y = 0, dir, move, t = 0, flag = 0;
+    int n, x = 0, y = 0, dir, move, t = 0;
     int dx[4] = {-1, 0, 0, 1}, dy[4] = {0, -1, 1, 0}; // w s n e
     char c;
 
@@ -31,14 +31,13 @@ int main() {
             y += dy[dir];
 
             if(IsStart(x, y)){
-                flag = 1;
-                break;
+                cout << t;
+                exit(0);
             }
         }
-        if(flag == 1) break;
     }
-
-    if(flag == 0) t = -1;
+    
+    t = -1;
 
     // 출력
     cout << t;
