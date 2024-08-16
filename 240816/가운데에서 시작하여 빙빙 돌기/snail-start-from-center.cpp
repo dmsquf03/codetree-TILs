@@ -3,7 +3,7 @@
 using namespace std;
 
 int n;
-int dr[4] = {0, -1, 0, 1}, dc[4] = {1, 0, -1, 0}; // 동 북 서 남
+int dr[4] = {0, -1, 0, 1}, dc[4] = {-1, 0, 1, 0}; // 서 북 동 남
 vector<vector<int>> map;
 
 bool InRange(int r, int c){
@@ -11,10 +11,10 @@ bool InRange(int r, int c){
 }
 
 void FillRect(){
-    int r = n/2, c = n/2, cnt = 1, dir = 0;
+    int r = n - 1, c = n - 1, cnt = n * n, dir = 0;
 
-    while(cnt < n * n + 1){
-        map[r][c] = cnt++;
+    while(cnt > 0){
+        map[r][c] = cnt--;
 
         if(!InRange(r + dr[dir], c + dc[dir]) || map[r + dr[dir]][c + dc[dir]] != 0){
             dir = (dir + 1) % 4;
