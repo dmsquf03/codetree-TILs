@@ -18,9 +18,7 @@ void FindMinDist(){
             // cout << "i:" << i << " j: " << j <<" dist: "<< dist << endl;
         }
         // 장소 거리끼리 비교
-        if(dist < m){
-            m = dist;
-        }
+        m = min(m, dist);
     }
 }
 
