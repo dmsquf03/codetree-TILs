@@ -6,9 +6,8 @@ int r, c, result = 0;
 vector<vector<char>> pan;
 
 void Find4MoveAbleCnt(){
-    int cr = 0, cc = 0, nr, nc;
-    for(int i = cr + 1; i < r - 2; i++){
-        for(int j = cc + 1; j < c - 2; j++){
+    for(int i = 1; i < r - 2; i++){
+        for(int j = 1; j < c - 2; j++){
             if(pan[0][0] == pan[i][j]){
                 continue;
             }
@@ -24,7 +23,6 @@ void Find4MoveAbleCnt(){
 }
 
 int main() {
-    // 여기에 코드를 작성해주세요.
     // 입력
     cin >> r >> c;
 
