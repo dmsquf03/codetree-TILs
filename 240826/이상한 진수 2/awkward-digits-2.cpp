@@ -26,7 +26,6 @@ void FindMaxN(){
             // cout << decimal_num << endl;
             k *= 2;
         }
-         
 
         // 현 최댓값과 비교
         n = max(decimal_num, n);
