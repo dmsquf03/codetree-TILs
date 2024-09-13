@@ -5,14 +5,13 @@
 using namespace std;
 
 vector<int> nums;
-int max_v = 0, n;
+int max_v = -1, n;
 
 void FindNoCarryMax(){
     // 서로 다른 3개 숫자 고르기
     // 각 자리별 숫자 더하기 10 넘으면 pass
     // 아니면 3개 다 더한 값 sum에 저장
     // max_v와 sum 비교 후 갱신
-    int ans = -1;
     for(int i = 0; i < n - 2; i++)
         for(int j = i + 1; j < n - 1; j++)
             for(int k = j + 1; k < n; k++) {
