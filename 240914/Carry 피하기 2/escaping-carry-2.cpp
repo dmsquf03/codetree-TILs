@@ -63,6 +63,9 @@ int main() {
     FindNoCarryMax();
 
     // 출력
-    cout << max_v;
+    if(max_v == 0){
+        cout << "-1";
+    }
+    else cout << max_v;
     return 0;
 }
