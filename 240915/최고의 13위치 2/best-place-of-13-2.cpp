@@ -10,8 +10,9 @@ void FindMaxCoin(){
     int cnt = 0;
     for(int i = 0; i < n; i++){// 첫번째 격자 행
         for(int j = 0; j < n - 2; j++){// 첫번째 격자 열
-            for(int k = i + 1; k < n; k++){// 두번째 격자 행
+            for(int k = i; k < n; k++){// 두번째 격자 행
                 for(int l = 0; l < n - 2; l++){// 두번째 격자 열
+                    if(k == i && j - 3 < l && l < j + 3) continue;
                     cnt = pan[i][j] + pan[i][j + 1] + pan[i][j + 2] + pan[k][l] + pan[k][l + 1] + pan[k][l + 2];
                     result = max(result, cnt);
                 }
