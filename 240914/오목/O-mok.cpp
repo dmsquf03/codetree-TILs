@@ -40,6 +40,9 @@ int main() {
 
     // 출력
     cout << winner << endl;
-    cout << x + 1 << " " << y + 1;
+    if(winner){
+        cout << x + 1 << " " << y + 1;
+    }
+    
     return 0;
 }
