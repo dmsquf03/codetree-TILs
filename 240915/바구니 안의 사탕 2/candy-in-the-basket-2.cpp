@@ -8,7 +8,7 @@ vector<int> bucket;
 
 void FindMaxCandy(){
     int sum;
-    for(int i = k; i < 101 - k; i++){// 중심점 c 인덱스
+    for(int i = k; i < 101 - k + 1; i++){// 중심점 c 인덱스
         sum = 0;
         for(int j = i - k; j < i + k + 1; j++){
             sum += bucket[j];
