@@ -8,12 +8,11 @@ vector<int> bucket;
 
 void FindMaxCandy(){
     int sum;
-    for(int i = k; i < 101 - k + 1; i++){// 중심점 c 인덱스
+    for(int i = k; i < 101 - k; i++){// 중심점 c 인덱스
         sum = 0;
         for(int j = i - k; j < i + k + 1; j++){
             sum += bucket[j];
         }
-        // cout << "i:" << i << " sum: " << sum << " result: " << result << endl;
         result = max(result, sum);
     }
 }
@@ -21,6 +20,7 @@ void FindMaxCandy(){
 int main() {
     // 입력
     cin >> n >> k;
+    if(k > 50) k = 50;
 
     bucket = vector<int> (101, 0);
 
