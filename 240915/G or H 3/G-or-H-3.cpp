@@ -3,12 +3,12 @@
 #include <algorithm>
 using namespace std;
 
-int n, k, result = 0, size = 0;
+int n, k, result = 0;
 vector<char> line;
 
 void FindMaxPoint(){
     int point;
-    for(int i = 0; i < size - k + 1; i++){// 사진 기준
+    for(int i = 0; i < 10000 - k + 1; i++){// 사진 기준
         point = 0;
         for(int j = 0; j < k + 1; j++){// 점수 합
             if(line[i + j] == '0') continue;
@@ -30,10 +30,7 @@ int main() {
     for(int i = 0; i < n; i++){
         cin >> idx;
         cin >> line[idx - 1];
-        size = max(size, idx);
     }
-
-    line.resize(size);
 
     // 실행
     FindMaxPoint();
