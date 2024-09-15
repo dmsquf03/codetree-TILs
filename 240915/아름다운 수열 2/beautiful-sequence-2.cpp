@@ -10,11 +10,16 @@ void CountBSeq(){
     int flag;
     for(int i = 0; i < n; i++){// 구간 시작 인덱스
         for(int j = i; j < n; j++){// 구간 끝 인덱스
+            // 초기화
             flag = 1;
-            seq = vector<int> (100, 0);// 초기화
+            seq = vector<int> (100, 0);
+
+            // 구간 내의 숫자 구성 저장
             for(int k = i; k < j + 1; k++){
                 seq[a[k]]++;
             }
+
+            // 숫자 구성 같은지 확인
             for(int k = 0; k < 100; k++){
                 if(seq[k] != b[k]){
                     flag = 0;
