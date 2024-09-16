@@ -21,7 +21,7 @@ void FindMinCost(){
 
 int main() {
     // 입력
-    cin >> n >> t >> h;
+    cin >> n >> h >> t;
 
     field = vector<int> (n, 0);
 
