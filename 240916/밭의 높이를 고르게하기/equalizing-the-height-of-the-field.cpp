@@ -11,13 +11,11 @@ vector<int> field;
 void FindMinCost(){
     int cost;
     for(int i = 0; i < n - t + 1; i++){// 시작 인덱스
-        for(int j = i + t - 1; j < n; j++){// 끝 인덱스
-            cost = 0;
-            for(int k = i; k < j + 1; k++){// 구간 내 비용 계산
-                cost += abs(h - field[k]);
-            }
-            result = min(result, cost);
+        cost = 0;
+        for(int k = 0; k < t; k++){// 구간 내 비용 계산
+            cost += abs(h - field[i + k]);
         }
+        result = min(result, cost);
     }
 }
 
