@@ -15,12 +15,14 @@ void FindMaxSize(){
             g = 0, h = 0;
             for(int k = i; k < j + 1; k++){
                 if(people[k].second == 'G') g++;
-                else if(people[i].second == 'H') h++;
+                else h++;
             }
-            if(g != 0 && g == h){
+            // cout << "i:"<< i <<" j:"<< j <<" g:"<< g <<" h:" << h << endl;
+            if(g > 0 && h == 0 || g == 0 && h > 0 || g == h){// g만, h만, g==h
                 size = people[j].first - people[i].first;
                 result = max(result, size);
             }
+            // cout << "size:" << size << " result:" << result << endl;
         }
     }
 }
