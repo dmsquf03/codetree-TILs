@@ -32,9 +32,10 @@ void CountPossibleNum(){
         for(int j = 1; j < 10; j++){// 두 번째
             if(i == j) continue;
             for(int k = 1; k < 10; k++){// 세 번째
-                if(j == k) continue;
+                if(j == k || i == k) continue;
                 pos_n[0] = i, pos_n[1] = j; pos_n[2] = k;
                 if((IsRight(pos_n))) result++;
+                // cout << "ijk:" << i << j << k << " result:" << result << endl;
             }
         }
     }
