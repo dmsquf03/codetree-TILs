@@ -12,9 +12,9 @@ void GetMaxRunTime(){
     int t_time;
 
     for(int i = 0; i < n; i++){
+        time[1001] = {0};
         for(int j = 0; j < n; j++){
             if(j == i) continue;
-            time[1001] = {0};
             for(int k = work[j].first; k < work[j].second; k++){
                 time[k] = 1;
             }
