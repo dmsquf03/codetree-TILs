@@ -7,11 +7,11 @@
 using namespace std;
 
 int n;
-double result = 0;
+int result = 0;
 vector<pair<int, int>> point;
 
 void GetMaxAreaDouble(){
-    double area;
+    int area;
     for(int i = 0; i < n; i++){// 1번째
         for(int j = 0; j < n; j++){// 2번째
             if(j == i) continue;
