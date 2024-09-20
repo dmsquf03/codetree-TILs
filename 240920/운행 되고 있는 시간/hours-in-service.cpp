@@ -8,16 +8,22 @@ int n, result = 0;
 vector<pair<int, int>> work;
 
 void GetMaxRunTime(){
-    int time[1001];
-    int small, large;
-    for(int i = 0; i < n; i++){// 뺄 사람 인덱스
-        small = 1001, large = 0;
+    int time[1001] = {0};
+    int t_time;
+
+    for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++){
             if(j == i) continue;
-            small = min(small, work[j].first);
-            large = max(large, work[j].second);
+            time[1001] = {0};
+            for(int k = work[j].first; k < work[j].second; k++){
+                time[k] = 1;
+            }
+            t_time = 0;
+            for(int k = 1; k < 1001; k++){
+                t_time += time[k];
+            }
+            result = max(result, t_time) - 1;
         }
-        result = max(result, large - small - 1);
     }
 }
 
