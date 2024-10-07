@@ -16,7 +16,8 @@ string Operator(int a, char o, int c){
         return to_string(a * c);
     }
     else {
-        return "false";
+        cout << "false";
+        exit(1);
     }
 }
 
