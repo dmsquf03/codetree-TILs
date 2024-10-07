@@ -16,16 +16,23 @@ string Operator(int a, char o, int c){
         return to_string(a * c);
     }
     else {
-        cout << "false";
-        exit(1);
+        return "false";
     }
 }
 
 int main() {
     int a, c;
     char o;
+    string result;
     cin >> a >> o >> c;
-    cout << a << " " << o << " " << c << " = " << Operator(a, o, c); 
+
+    result = Operator(a, o, c);
+    if(result == "false"){
+        cout << result;
+    }
+    else {
+        cout << a << " " << o << " " << c << " = " << result; 
+    }
     
     return 0;
 }
