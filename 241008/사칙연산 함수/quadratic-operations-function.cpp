@@ -16,7 +16,7 @@ string Operator(int a, char o, int c){
         return to_string(a * c);
     }
     else {
-        return "false";
+        return "False";
     }
 }
 
@@ -27,12 +27,12 @@ int main() {
     cin >> a >> o >> c;
 
     result = Operator(a, o, c);
-    if(result == "false"){
+    if(result == "False"){
         cout << result;
     }
     else {
         cout << a << " " << o << " " << c << " = " << result; 
     }
-    
+
     return 0;
 }
