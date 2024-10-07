@@ -1,18 +1,22 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
-int Operator(int a, char o, int c){
+string Operator(int a, char o, int c){
     if(o == '+'){
-        return a + c;
+        return to_string(a + c);
     }
     else if(o == '-'){
-        return a - c;
+        return to_string(a - c);
     }
     else if(o == '/'){
-        return a / c;
+        return to_string(a / c);
     }
-    else{
-        return a * c;
+    else if(o == '*'){
+        return to_string(a * c);
+    }
+    else {
+        return "false";
     }
 }
 
