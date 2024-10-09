@@ -14,8 +14,8 @@ void FindMaxStudent(){
         for(int j = 0; j < n; j++){
             if(j == i) psum += price[j] / 2;
             psum += price[j];
-            student++;
             if(psum >= b) break;
+            student++;
         }
         result = max(result, student);
     }
