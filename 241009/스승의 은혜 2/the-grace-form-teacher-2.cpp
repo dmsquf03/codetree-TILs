@@ -12,10 +12,10 @@ void FindMaxStudent(){
     for(int i = 0; i < n; i++){// 할인 받을 학생
         psum = 0, student = 0;
         for(int j = 0; j < n; j++){
-            if(psum >= b) break;
             if(j == i) psum += price[j] / 2;
             psum += price[j];
             student++;
+            if(psum >= b) break;
         }
         result = max(result, student);
     }
