@@ -35,19 +35,6 @@ public:
 };
 
 void FindMaxNeedPill(Cheese* cheese, People* people){
-    // 상한 치즈라 가정
-    // 모순되면 제외
-    /* 1. 해당 치즈 안 먹은 사람이 아픔
-        for(사람:안 먹은 사람들)
-        if(sickTime != -1)
-        rotten = false
-    */
-    /* 2. 먹었는데 먹기 전(바로)에 아픔
-        for (사람:먹은 사람들)
-        if(sickTime != -1 && sickTime <= eatTime)
-        rotten = false
-    */
-    // 치즈 중심으로 보는 중-> 치즈 먹/안먹 구분위해 치즈 안에 배열부여 (최대 50이니 가능)
     for(int i = 0; i < M; i++){ // 상한 치즈 가정
         bool rotten = true;
         int cnt = 0;
@@ -64,16 +51,12 @@ void FindMaxNeedPill(Cheese* cheese, People* people){
                     break;
                 }
                 cnt++;
+                // cout << "i:" << i << " j:" << j << " cnt:" << cnt << endl;
             }
         }
         if(!rotten) continue;
         result = max(result, cnt);
     }
-
-    // 더 합치는 방법은 없을까? 사람 중심으로 본다면?
-    // 아픈 사람 -> 상한 치즈를 먹었다 -> 사람이 먹은 치즈 배열 -> 무조건 공통 치즈가 존재해야한다.
-    // 결국 시간을 따져야함. 
-    
 }
 
 int main(){
