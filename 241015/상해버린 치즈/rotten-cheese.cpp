@@ -17,8 +17,10 @@ public:
     }
 
     void SetPeopleAte(int idx, int t){
-        people_ate[idx].first = 1;
-        people_ate[idx].second = t;
+        if(people_ate[idx].second == 0 || people_ate[idx].second > t){// 여러번 먹을 수 있다. !!먹은 가장 이른 시간을 기록하자(생각 못함)!!
+            people_ate[idx].first = 1;
+            people_ate[idx].second = t;
+        }
     }
 };
 
@@ -39,6 +41,7 @@ void FindMaxNeedPill(Cheese* cheese, People* people){
         bool rotten = true;
         int cnt = 0;
         for(int j = 0; j < N; j++){ // 전체 사람에 대해
+            //cout <<"i:" << i << " j:" << j << " sickT:" << people[j].sickT << " eatT:" << cheese[i].people_ate[j].second<< endl;
             if(cheese[i].people_ate[j].first == 0){ // 안 먹음
                 if(people[j].sickT != -1){ // 근데 아픔 -> 모순
                     rotten = false;
@@ -51,11 +54,12 @@ void FindMaxNeedPill(Cheese* cheese, People* people){
                     break;
                 }
                 cnt++;
-                // cout << "i:" << i << " j:" << j << " cnt:" << cnt << endl;
+                //cout <<"*cnt:" << cnt << endl;
             }
         }
-        if(!rotten) continue;
-        result = max(result, cnt);
+        if(rotten) {
+            result = max(result, cnt);
+        }
     }
 }
 
