@@ -21,7 +21,7 @@ int CountRegions(){ // 폭탄으로 터지는 지역 카운트하는 함수
     int cnt = 0;
     for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++){
-            if(!visited[i][j]){
+            if(visited[i][j] != 0){
                 cnt++;
             }
         }
